@@ -1,6 +1,17 @@
-package generic
+package list
 
-import "unsafe"
+import (
+	"fmt"
+	"unsafe"
+
+	constraints "github.com/skeptycal/goutil/generic/generictypes/constraints"
+)
+
+type (
+	Number     constraints.Number
+	Ordered    constraints.Ordered
+	Stringable any
+)
 
 // TODO ...
 func MakeRandomString[O Ordered](list List[O], n int) List[O] {
@@ -34,22 +45,27 @@ func ToString[S Stringable](s []S) string {
 		return ""
 	}
 
-	size := int(unsafe.Sizeof(s[0]))
+	return fmt.Sprintf("%v", s)
 
-	alloc := length * size
+	/*
 
-	buf := make([]byte, alloc)
+		size := int(unsafe.Sizeof(s[0]))
 
-	for _, v := range s {
-		c := []byte{}
-		for j := 0; j < size; j++ {
-			c = append(c, byte(v))
+		alloc := length * size
+
+		buf := make([]byte, alloc)
+
+		for _, v := range s {
+			c := []byte{}
+			for j := 0; j < size; j++ {
+				c = append(c, byte(v))
+			}
+			buf = append(buf, c...)
 		}
-		buf = append(buf, c...)
-	}
 
-	return string(buf)
-	// return *(*string)(unsafe.Pointer(&n))
+		return string(buf)
+		// return *(*string)(unsafe.Pointer(&n))
+	*/
 }
 
 // ToByte recasts a variable of any type in the

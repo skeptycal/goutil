@@ -1,6 +1,8 @@
-package generic
+package list
 
-import "sort"
+import (
+	"sort"
+)
 
 type Lister[O Ordered] interface {
 	sort.Interface

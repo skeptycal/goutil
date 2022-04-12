@@ -1,10 +1,14 @@
-package generic
+package list
 
 import (
 	"fmt"
 	"math/rand"
 	"unsafe"
+
+	"github.com/skeptycal/goutil/repo/errorlogger"
 )
+
+var log = errorlogger.New()
 
 var defaultRandomNumberRange int = 100
 
