@@ -36,7 +36,8 @@ go.work
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -232,4 +233,3 @@ cython_debug/
 # Support for Project snippet scope
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,macos,go
-

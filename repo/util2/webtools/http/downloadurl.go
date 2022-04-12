@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	"
+	"github.com/skeptycal/goutil/repo/util2/gofile"
 )
 
 // DownloadURL - download content from a URL to <filename>

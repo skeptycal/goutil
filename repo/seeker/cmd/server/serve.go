@@ -4,7 +4,7 @@ import (
 	"fmt"
 	http "net/http"
 
-	"
+	"github.com/skeptycal/goutil/repo/seeker"
 )
 
 type handler struct {

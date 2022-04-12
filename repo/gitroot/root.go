@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"
 	"log"
-	// "github.com/integralist/go-findroot/find"
+
+	"github.com/integralist/go-findroot/find"
 )
 
 func main() {

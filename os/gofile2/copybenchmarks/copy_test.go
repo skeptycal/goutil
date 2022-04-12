@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"
-	"
+	gofile "github.com/skeptycal/goutil/os/gofile2"
+	"github.com/skeptycal/goutil/repo/errorlogger"
 )
 
 const fakesize = 2 << 16

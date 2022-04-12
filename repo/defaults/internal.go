@@ -5,8 +5,8 @@ import (
 	"io"
 	"sync"
 
-	"
-	"
+	"github.com/skeptycal/anybool"
+	"github.com/skeptycal/goutil/types"
 )
 
 const (

@@ -6,8 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"
-	"
+	"github.com/skeptycal/goutil/types"
 )
 
 const defaultTemplatePath = "template_files"

@@ -3,7 +3,7 @@ package ghshell
 import (
 	"fmt"
 
-	"
+	"github.com/skeptycal/goutil/repo/errorlogger"
 )
 
 var (

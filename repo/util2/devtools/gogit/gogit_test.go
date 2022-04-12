@@ -4,7 +4,7 @@ package gogit
 import (
 	"testing"
 
-	"
+	"github.com/skeptycal/zsh"
 )
 
 func TestRemote(t *testing.T) {

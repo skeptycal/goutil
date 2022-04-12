@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"
+	"github.com/skeptycal/goutil/repo/util2/gofile"
 )
 
 type jsonMap map[string]interface{}
@@ -16,7 +16,7 @@ func Load(filename string) (JSON, error) {
 	fi := gofile.Stat(filename)
 	if fi == nil {
 		return nil, nil
-    }
+	}
 
 	j := &jsonStruct{fi, &jsonMap{}}
 	err := j.ReadFile()
@@ -27,10 +27,10 @@ func Load(filename string) (JSON, error) {
 }
 
 func New(filename string) (JSON, error) {
-    fi := gofile.Stat(filename)
+	fi := gofile.Stat(filename)
 	if fi != nil {
 		return nil, os.ErrExist
-    }
+	}
 
 	j := &jsonStruct{fi, &jsonMap{}}
 	err := j.ReadFile()
@@ -45,9 +45,9 @@ type JSON interface {
 	ReadFile() error
 	Name() string
 	Save() error
-    Size() int64
-    json.Marshaler
-    json.Unmarshaler
+	Size() int64
+	json.Marshaler
+	json.Unmarshaler
 }
 
 // jsonStruct implements a JSON mapping with os.FileInfo included.
@@ -73,7 +73,7 @@ func (j *jsonStruct) ReadFile() error {
 // note: variable/field names should begin with an
 // uppercase letter or they will not load correctly
 func (j *jsonStruct) Save() error {
-    data, err := j. MarshalJSON()
+	data, err := j.MarshalJSON()
 	if err != nil {
 		return err
 	}
@@ -97,5 +97,5 @@ func (j *jsonStruct) UnmarshalJSON(data []byte) error {
 // and returns the JSON encoding of itself.
 //
 func (j *jsonStruct) MarshalJSON() ([]byte, error) {
-    return json.Marshal(j.v)
+	return json.Marshal(j.v)
 }

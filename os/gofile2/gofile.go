@@ -4,7 +4,7 @@ package gofile
 import (
 	"os"
 
-	"
+	"github.com/skeptycal/goutil/repo/errorlogger"
 )
 
 var (

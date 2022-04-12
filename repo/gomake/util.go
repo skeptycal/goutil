@@ -3,7 +3,7 @@ package gomake
 import (
 	"os"
 
-	"
+	"github.com/skeptycal/goutil/os/gofile"
 )
 
 // MkDir creates the directory dir if it does not exist

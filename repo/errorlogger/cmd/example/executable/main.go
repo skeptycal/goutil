@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"
-	"
+	"github.com/skeptycal/errorlogger/cmd/example/executable/osargsutils"
+	"github.com/skeptycal/goutil/repo/errorlogger"
 )
 
 var log = errorlogger.Log

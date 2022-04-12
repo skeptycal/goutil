@@ -7,9 +7,7 @@ package gofile
 
 // 	"github.com/fatih/color"
 // 	log "github.com/sirupsen/logrus"
-// 	"
-// 	"
-// )
+// // // )
 
 // // func Dir(path string) string {
 // // 	command := fmt.Sprintf("ls -R %s", path)

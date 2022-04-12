@@ -8,7 +8,6 @@ import (
 	"os"
 
 	"github.com/sirupsen/logrus"
-	ansi "
 )
 
 var (
