@@ -1,0 +1,762 @@
+# io
+/usr/local/go/src/io/io.go:310:6: cannot inline WriteString: function too complex: cost 154 exceeds budget 80
+/usr/local/go/src/io/io.go:325:6: cannot inline ReadAtLeast: function too complex: cost 108 exceeds budget 80
+/usr/local/go/src/io/io.go:349:6: can inline ReadFull with cost 73 as: func(Reader, []byte) (int, error) { return .autotmp_4, .autotmp_5 }
+/usr/local/go/src/io/io.go:404:6: cannot inline copyBuffer: function too complex: cost 401 exceeds budget 80
+/usr/local/go/src/io/io.go:384:6: can inline Copy with cost 72 as: func(Writer, Reader) (int64, error) { return .autotmp_4, .autotmp_5 }
+/usr/local/go/src/io/io.go:458:6: can inline LimitReader with cost 8 as: func(Reader, int64) Reader { return &LimitedReader{...} }
+/usr/local/go/src/io/io.go:360:6: cannot inline CopyN: function too complex: cost 109 exceeds budget 80
+/usr/local/go/src/io/io.go:361:38: inlining call to LimitReader
+/usr/local/go/src/io/io.go:361:21: inlining call to Copy
+/usr/local/go/src/io/io.go:395:6: cannot inline CopyBuffer: function too complex: cost 84 exceeds budget 80
+/usr/local/go/src/io/io.go:469:6: cannot inline (*LimitedReader).Read: function too complex: cost 91 exceeds budget 80
+/usr/local/go/src/io/io.go:483:6: can inline NewSectionReader with cost 29 as: func(ReaderAt, int64, int64) *SectionReader { var remaining int64; remaining = <nil>; <node DCLCONST>; if off <= maxint64 - n { remaining = n + off } else { remaining = maxint64 }; return &SectionReader{...} }
+/usr/local/go/src/io/io.go:505:6: cannot inline (*SectionReader).Read: function too complex: cost 101 exceeds budget 80
+/usr/local/go/src/io/io.go:520:6: can inline (*SectionReader).Seek with cost 42 as: method(*SectionReader) func(int64, int) (int64, error) { switch statement; if offset < s.base { return 0, errOffset }; s.off = offset; return offset - s.base, nil }
+/usr/local/go/src/io/io.go:538:6: cannot inline (*SectionReader).ReadAt: function too complex: cost 187 exceeds budget 80
+/usr/local/go/src/io/io.go:555:6: can inline (*SectionReader).Size with cost 6 as: method(*SectionReader) func() int64 { return s.limit - s.base }
+/usr/local/go/src/io/io.go:562:6: can inline TeeReader with cost 8 as: func(Reader, Writer) Reader { return &teeReader{...} }
+/usr/local/go/src/io/io.go:571:6: cannot inline (*teeReader).Read: function too complex: cost 148 exceeds budget 80
+/usr/local/go/src/io/io.go:591:6: can inline discard.Write with cost 4 as: method(discard) func([]byte) (int, error) { return len(p), nil }
+/usr/local/go/src/io/io.go:595:6: can inline discard.WriteString with cost 4 as: method(discard) func(string) (int, error) { return len(s), nil }
+/usr/local/go/src/io/io.go:600:7: can inline glob..func1 with cost 10 as: func() any { b := make([]byte, 8192); return &b }
+/usr/local/go/src/io/io.go:606:6: cannot inline discard.ReadFrom: function too complex: cost 215 exceeds budget 80
+/usr/local/go/src/io/io.go:624:6: can inline NopCloser with cost 5 as: func(Reader) ReadCloser { return nopCloser{...} }
+/usr/local/go/src/io/io.go:632:6: can inline nopCloser.Close with cost 2 as: method(nopCloser) func() error { return nil }
+/usr/local/go/src/io/io.go:638:6: cannot inline ReadAll: function too complex: cost 117 exceeds budget 80
+/usr/local/go/src/io/multi.go:9:6: can inline eofReader.Read with cost 3 as: method(eofReader) func([]byte) (int, error) { return 0, EOF }
+/usr/local/go/src/io/multi.go:17:6: cannot inline (*multiReader).Read: function too complex: cost 142 exceeds budget 80
+/usr/local/go/src/io/multi.go:48:6: can inline MultiReader with cost 16 as: func(...Reader) Reader { r := make([]Reader, len(readers)); copy(r, readers); return &multiReader{...} }
+/usr/local/go/src/io/multi.go:58:6: cannot inline (*multiWriter).Write: function too complex: cost 89 exceeds budget 80
+/usr/local/go/src/io/multi.go:74:6: cannot inline (*multiWriter).WriteString: function too complex: cost 176 exceeds budget 80
+/usr/local/go/src/io/multi.go:102:6: can inline MultiWriter with cost 42 as: func(...Writer) Writer { allWriters := make([]Writer, 0, len(writers)); for loop; return &multiWriter{...} }
+/usr/local/go/src/io/pipe.go:21:6: cannot inline (*onceError).Store: unhandled op DEFER
+/usr/local/go/src/io/pipe.go:22:8: inlining call to sync.(*Mutex).Lock
+/usr/local/go/src/io/pipe.go:29:6: cannot inline (*onceError).Load: unhandled op DEFER
+/usr/local/go/src/io/pipe.go:30:8: inlining call to sync.(*Mutex).Lock
+/usr/local/go/src/io/pipe.go:108:6: cannot inline (*pipe).readCloseError: function too complex: cost 144 exceeds budget 80
+/usr/local/go/src/io/pipe.go:50:6: cannot inline (*pipe).read: unhandled op SELECT
+/usr/local/go/src/io/pipe.go:67:6: cannot inline (*pipe).closeRead: function too complex: cost 165 exceeds budget 80
+/usr/local/go/src/io/pipe.go:72:11: inlining call to sync.(*Once).Do
+/usr/local/go/src/io/pipe.go:72:12: can inline (*pipe).closeRead.func1 with cost 3 as: func() { close(p.done) }
+/usr/local/go/src/io/pipe.go:117:6: cannot inline (*pipe).writeCloseError: function too complex: cost 144 exceeds budget 80
+/usr/local/go/src/io/pipe.go:76:6: cannot inline (*pipe).write: unhandled op SELECT
+/usr/local/go/src/io/pipe.go:81:14: inlining call to sync.(*Mutex).Lock
+/usr/local/go/src/io/pipe.go:98:6: cannot inline (*pipe).closeWrite: function too complex: cost 165 exceeds budget 80
+/usr/local/go/src/io/pipe.go:103:11: inlining call to sync.(*Once).Do
+/usr/local/go/src/io/pipe.go:103:12: can inline (*pipe).closeWrite.func1 with cost 3 as: func() { close(p.done) }
+/usr/local/go/src/io/pipe.go:135:6: can inline (*PipeReader).Read with cost 72 as: method(*PipeReader) func([]byte) (int, error) { return .autotmp_4, .autotmp_5 }
+/usr/local/go/src/io/pipe.go:150:6: can inline (*PipeReader).CloseWithError with cost 63 as: method(*PipeReader) func(error) error { return (*pipe).closeRead(r.p, err) }
+/usr/local/go/src/io/pipe.go:141:6: can inline (*PipeReader).Close with cost 68 as: method(*PipeReader) func() error { return (*PipeReader).CloseWithError(r, nil) }
+/usr/local/go/src/io/pipe.go:142:25: inlining call to (*PipeReader).CloseWithError
+/usr/local/go/src/io/pipe.go:164:6: can inline (*PipeWriter).Write with cost 72 as: method(*PipeWriter) func([]byte) (int, error) { return .autotmp_4, .autotmp_5 }
+/usr/local/go/src/io/pipe.go:180:6: can inline (*PipeWriter).CloseWithError with cost 63 as: method(*PipeWriter) func(error) error { return (*pipe).closeWrite(w.p, err) }
+/usr/local/go/src/io/pipe.go:170:6: can inline (*PipeWriter).Close with cost 68 as: method(*PipeWriter) func() error { return (*PipeWriter).CloseWithError(w, nil) }
+/usr/local/go/src/io/pipe.go:171:25: inlining call to (*PipeWriter).CloseWithError
+/usr/local/go/src/io/pipe.go:199:6: can inline Pipe with cost 24 as: func() (*PipeReader, *PipeWriter) { p := &pipe{...}; return &PipeReader{...}, &PipeWriter{...} }
+/usr/local/go/src/io/io.go:29:31: inlining call to errors.New
+/usr/local/go/src/io/io.go:32:33: inlining call to errors.New
+/usr/local/go/src/io/io.go:35:32: inlining call to errors.New
+/usr/local/go/src/io/io.go:44:21: inlining call to errors.New
+/usr/local/go/src/io/io.go:48:34: inlining call to errors.New
+/usr/local/go/src/io/io.go:53:31: inlining call to errors.New
+/usr/local/go/src/io/io.go:517:27: inlining call to errors.New
+/usr/local/go/src/io/io.go:518:27: inlining call to errors.New
+/usr/local/go/src/io/pipe.go:36:31: inlining call to errors.New
+/usr/local/go/src/io/io.go:314:23: ([]byte)(s) escapes to heap:
+/usr/local/go/src/io/io.go:314:23:   flow: {heap} = &{storage for ([]byte)(s)}:
+/usr/local/go/src/io/io.go:314:23:     from ([]byte)(s) (spill) at /usr/local/go/src/io/io.go:314:23
+/usr/local/go/src/io/io.go:314:23:     from w.Write(([]byte)(s)) (call parameter) at /usr/local/go/src/io/io.go:314:16
+/usr/local/go/src/io/io.go:310:18: parameter w leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:310:18:   flow: {heap} = w:
+/usr/local/go/src/io/io.go:310:18:     from w.Write(([]byte)(s)) (call parameter) at /usr/local/go/src/io/io.go:314:16
+/usr/local/go/src/io/io.go:310:28: parameter s leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:310:28:   flow: {heap} = s:
+/usr/local/go/src/io/io.go:310:28:     from sw.WriteString(s) (call parameter) at /usr/local/go/src/io/io.go:312:24
+/usr/local/go/src/io/io.go:310:18: leaking param: w
+/usr/local/go/src/io/io.go:310:28: leaking param: s
+/usr/local/go/src/io/io.go:314:23: ([]byte)(s) escapes to heap
+/usr/local/go/src/io/io.go:325:28: parameter buf leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:325:28:   flow: {heap} = buf:
+/usr/local/go/src/io/io.go:325:28:     from buf[n:] (slice) at /usr/local/go/src/io/io.go:331:23
+/usr/local/go/src/io/io.go:325:28:     from r.Read(buf[n:]) (call parameter) at /usr/local/go/src/io/io.go:331:19
+/usr/local/go/src/io/io.go:325:18: parameter r leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:325:18:   flow: {heap} = r:
+/usr/local/go/src/io/io.go:325:18:     from r.Read(buf[n:]) (call parameter) at /usr/local/go/src/io/io.go:331:19
+/usr/local/go/src/io/io.go:325:18: leaking param: r
+/usr/local/go/src/io/io.go:325:28: leaking param: buf
+/usr/local/go/src/io/io.go:349:25: parameter buf leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:349:25:   flow: {heap} = buf:
+/usr/local/go/src/io/io.go:349:25:     from ReadAtLeast(r, buf, len(buf)) (call parameter) at /usr/local/go/src/io/io.go:350:20
+/usr/local/go/src/io/io.go:349:15: parameter r leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:349:15:   flow: {heap} = r:
+/usr/local/go/src/io/io.go:349:15:     from ReadAtLeast(r, buf, len(buf)) (call parameter) at /usr/local/go/src/io/io.go:350:20
+/usr/local/go/src/io/io.go:349:15: leaking param: r
+/usr/local/go/src/io/io.go:349:25: leaking param: buf
+/usr/local/go/src/io/io.go:423:13: make([]byte, size) escapes to heap:
+/usr/local/go/src/io/io.go:423:13:   flow: {heap} = &{storage for make([]byte, size)}:
+/usr/local/go/src/io/io.go:423:13:     from make([]byte, size) (non-constant size) at /usr/local/go/src/io/io.go:423:13
+/usr/local/go/src/io/io.go:404:41: parameter buf leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:404:41:   flow: {heap} = buf:
+/usr/local/go/src/io/io.go:404:41:     from src.Read(buf) (call parameter) at /usr/local/go/src/io/io.go:426:21
+/usr/local/go/src/io/io.go:404:29: parameter src leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:404:29:   flow: {heap} = src:
+/usr/local/go/src/io/io.go:404:29:     from rt.ReadFrom(src) (call parameter) at /usr/local/go/src/io/io.go:412:21
+/usr/local/go/src/io/io.go:404:17: parameter dst leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:404:17:   flow: {heap} = dst:
+/usr/local/go/src/io/io.go:404:17:     from wt.WriteTo(dst) (call parameter) at /usr/local/go/src/io/io.go:408:20
+/usr/local/go/src/io/io.go:404:17: leaking param: dst
+/usr/local/go/src/io/io.go:404:29: leaking param: src
+/usr/local/go/src/io/io.go:404:41: leaking param: buf
+/usr/local/go/src/io/io.go:423:13: make([]byte, size) escapes to heap
+/usr/local/go/src/io/io.go:361:38: &LimitedReader{...} escapes to heap:
+/usr/local/go/src/io/io.go:361:38:   flow: ~R0 = &{storage for &LimitedReader{...}}:
+/usr/local/go/src/io/io.go:361:38:     from &LimitedReader{...} (spill) at /usr/local/go/src/io/io.go:361:38
+/usr/local/go/src/io/io.go:361:38:     from &LimitedReader{...} (interface-converted) at /usr/local/go/src/io/io.go:361:38
+/usr/local/go/src/io/io.go:361:38:     from ~R0 = &LimitedReader{...} (assign-pair) at /usr/local/go/src/io/io.go:361:38
+/usr/local/go/src/io/io.go:361:38:   flow: src = ~R0:
+/usr/local/go/src/io/io.go:361:38:     from dst, src := dst, ~R0 (assign-pair) at /usr/local/go/src/io/io.go:361:21
+/usr/local/go/src/io/io.go:361:38:   flow: {heap} = src:
+/usr/local/go/src/io/io.go:361:38:     from copyBuffer(dst, src, nil) (call parameter) at /usr/local/go/src/io/io.go:361:21
+/usr/local/go/src/io/io.go:360:12: parameter dst leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:360:12:   flow: dst = dst:
+/usr/local/go/src/io/io.go:360:12:     from dst, src := dst, ~R0 (assign-pair) at /usr/local/go/src/io/io.go:361:21
+/usr/local/go/src/io/io.go:360:12:   flow: {heap} = dst:
+/usr/local/go/src/io/io.go:360:12:     from copyBuffer(dst, src, nil) (call parameter) at /usr/local/go/src/io/io.go:361:21
+/usr/local/go/src/io/io.go:360:24: parameter src leaks to {storage for &LimitedReader{...}} with derefs=0:
+/usr/local/go/src/io/io.go:360:24:   flow: r = src:
+/usr/local/go/src/io/io.go:360:24:     from r, n := src, n (assign-pair) at /usr/local/go/src/io/io.go:361:38
+/usr/local/go/src/io/io.go:360:24:   flow: {storage for &LimitedReader{...}} = r:
+/usr/local/go/src/io/io.go:360:24:     from LimitedReader{...} (struct literal element) at /usr/local/go/src/io/io.go:361:38
+/usr/local/go/src/io/io.go:360:12: leaking param: dst
+/usr/local/go/src/io/io.go:360:24: leaking param: src
+/usr/local/go/src/io/io.go:361:38: &LimitedReader{...} escapes to heap
+/usr/local/go/src/io/io.go:384:23: parameter src leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:384:23:   flow: {heap} = src:
+/usr/local/go/src/io/io.go:384:23:     from copyBuffer(dst, src, nil) (call parameter) at /usr/local/go/src/io/io.go:385:19
+/usr/local/go/src/io/io.go:384:11: parameter dst leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:384:11:   flow: {heap} = dst:
+/usr/local/go/src/io/io.go:384:11:     from copyBuffer(dst, src, nil) (call parameter) at /usr/local/go/src/io/io.go:385:19
+/usr/local/go/src/io/io.go:384:11: leaking param: dst
+/usr/local/go/src/io/io.go:384:23: leaking param: src
+/usr/local/go/src/io/io.go:397:8: "empty buffer in CopyBuffer" escapes to heap:
+/usr/local/go/src/io/io.go:397:8:   flow: {heap} = &{storage for "empty buffer in CopyBuffer"}:
+/usr/local/go/src/io/io.go:397:8:     from "empty buffer in CopyBuffer" (spill) at /usr/local/go/src/io/io.go:397:8
+/usr/local/go/src/io/io.go:397:8:     from panic("empty buffer in CopyBuffer") (call parameter) at /usr/local/go/src/io/io.go:397:8
+/usr/local/go/src/io/io.go:395:41: parameter buf leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:395:41:   flow: {heap} = buf:
+/usr/local/go/src/io/io.go:395:41:     from copyBuffer(dst, src, buf) (call parameter) at /usr/local/go/src/io/io.go:399:19
+/usr/local/go/src/io/io.go:395:29: parameter src leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:395:29:   flow: {heap} = src:
+/usr/local/go/src/io/io.go:395:29:     from copyBuffer(dst, src, buf) (call parameter) at /usr/local/go/src/io/io.go:399:19
+/usr/local/go/src/io/io.go:395:17: parameter dst leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:395:17:   flow: {heap} = dst:
+/usr/local/go/src/io/io.go:395:17:     from copyBuffer(dst, src, buf) (call parameter) at /usr/local/go/src/io/io.go:399:19
+/usr/local/go/src/io/io.go:395:17: leaking param: dst
+/usr/local/go/src/io/io.go:395:29: leaking param: src
+/usr/local/go/src/io/io.go:395:41: leaking param: buf
+/usr/local/go/src/io/io.go:397:8: "empty buffer in CopyBuffer" escapes to heap
+/usr/local/go/src/io/io.go:458:53: &LimitedReader{...} escapes to heap:
+/usr/local/go/src/io/io.go:458:53:   flow: ~r0 = &{storage for &LimitedReader{...}}:
+/usr/local/go/src/io/io.go:458:53:     from &LimitedReader{...} (spill) at /usr/local/go/src/io/io.go:458:53
+/usr/local/go/src/io/io.go:458:53:     from &LimitedReader{...} (interface-converted) at /usr/local/go/src/io/io.go:458:53
+/usr/local/go/src/io/io.go:458:53:     from return &LimitedReader{...} (return) at /usr/local/go/src/io/io.go:458:46
+/usr/local/go/src/io/io.go:458:18: parameter r leaks to {storage for &LimitedReader{...}} with derefs=0:
+/usr/local/go/src/io/io.go:458:18:   flow: {storage for &LimitedReader{...}} = r:
+/usr/local/go/src/io/io.go:458:18:     from LimitedReader{...} (struct literal element) at /usr/local/go/src/io/io.go:458:67
+/usr/local/go/src/io/io.go:458:18: leaking param: r
+/usr/local/go/src/io/io.go:458:53: &LimitedReader{...} escapes to heap
+/usr/local/go/src/io/io.go:469:30: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:469:30:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:469:30:     from l.R.Read(p) (call parameter) at /usr/local/go/src/io/io.go:476:19
+/usr/local/go/src/io/io.go:469:7: parameter l leaks to {heap} with derefs=1:
+/usr/local/go/src/io/io.go:469:7:   flow: {heap} = *l:
+/usr/local/go/src/io/io.go:469:7:     from l.R (dot of pointer) at /usr/local/go/src/io/io.go:476:12
+/usr/local/go/src/io/io.go:469:7:     from l.R.Read(p) (call parameter) at /usr/local/go/src/io/io.go:476:19
+/usr/local/go/src/io/io.go:469:7: leaking param content: l
+/usr/local/go/src/io/io.go:469:30: leaking param: p
+/usr/local/go/src/io/io.go:493:9: &SectionReader{...} escapes to heap:
+/usr/local/go/src/io/io.go:493:9:   flow: ~r0 = &{storage for &SectionReader{...}}:
+/usr/local/go/src/io/io.go:493:9:     from &SectionReader{...} (spill) at /usr/local/go/src/io/io.go:493:9
+/usr/local/go/src/io/io.go:493:9:     from return &SectionReader{...} (return) at /usr/local/go/src/io/io.go:493:2
+/usr/local/go/src/io/io.go:483:23: parameter r leaks to {storage for &SectionReader{...}} with derefs=0:
+/usr/local/go/src/io/io.go:483:23:   flow: {storage for &SectionReader{...}} = r:
+/usr/local/go/src/io/io.go:483:23:     from SectionReader{...} (struct literal element) at /usr/local/go/src/io/io.go:493:23
+/usr/local/go/src/io/io.go:483:23: leaking param: r
+/usr/local/go/src/io/io.go:493:9: &SectionReader{...} escapes to heap
+/usr/local/go/src/io/io.go:505:30: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:505:30:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:505:30:     from s.r.ReadAt(p, s.off) (call parameter) at /usr/local/go/src/io/io.go:512:21
+/usr/local/go/src/io/io.go:505:7: parameter s leaks to {heap} with derefs=1:
+/usr/local/go/src/io/io.go:505:7:   flow: {heap} = *s:
+/usr/local/go/src/io/io.go:505:7:     from s.r (dot of pointer) at /usr/local/go/src/io/io.go:512:12
+/usr/local/go/src/io/io.go:505:7:     from s.r.ReadAt(p, s.off) (call parameter) at /usr/local/go/src/io/io.go:512:21
+/usr/local/go/src/io/io.go:505:7: leaking param content: s
+/usr/local/go/src/io/io.go:505:30: leaking param: p
+/usr/local/go/src/io/io.go:520:7: s does not escape
+/usr/local/go/src/io/io.go:538:32: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:538:32:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:538:32:     from s.r.ReadAt(p, off) (call parameter) at /usr/local/go/src/io/io.go:545:22
+/usr/local/go/src/io/io.go:538:7: parameter s leaks to {heap} with derefs=1:
+/usr/local/go/src/io/io.go:538:7:   flow: {heap} = *s:
+/usr/local/go/src/io/io.go:538:7:     from s.r (dot of pointer) at /usr/local/go/src/io/io.go:545:13
+/usr/local/go/src/io/io.go:538:7:     from s.r.ReadAt(p, off) (call parameter) at /usr/local/go/src/io/io.go:545:22
+/usr/local/go/src/io/io.go:538:7: leaking param content: s
+/usr/local/go/src/io/io.go:538:32: leaking param: p
+/usr/local/go/src/io/io.go:555:7: s does not escape
+/usr/local/go/src/io/io.go:563:9: &teeReader{...} escapes to heap:
+/usr/local/go/src/io/io.go:563:9:   flow: ~r0 = &{storage for &teeReader{...}}:
+/usr/local/go/src/io/io.go:563:9:     from &teeReader{...} (spill) at /usr/local/go/src/io/io.go:563:9
+/usr/local/go/src/io/io.go:563:9:     from &teeReader{...} (interface-converted) at /usr/local/go/src/io/io.go:563:9
+/usr/local/go/src/io/io.go:563:9:     from return &teeReader{...} (return) at /usr/local/go/src/io/io.go:563:2
+/usr/local/go/src/io/io.go:562:26: parameter w leaks to {storage for &teeReader{...}} with derefs=0:
+/usr/local/go/src/io/io.go:562:26:   flow: {storage for &teeReader{...}} = w:
+/usr/local/go/src/io/io.go:562:26:     from teeReader{...} (struct literal element) at /usr/local/go/src/io/io.go:563:19
+/usr/local/go/src/io/io.go:562:16: parameter r leaks to {storage for &teeReader{...}} with derefs=0:
+/usr/local/go/src/io/io.go:562:16:   flow: {storage for &teeReader{...}} = r:
+/usr/local/go/src/io/io.go:562:16:     from teeReader{...} (struct literal element) at /usr/local/go/src/io/io.go:563:19
+/usr/local/go/src/io/io.go:562:16: leaking param: r
+/usr/local/go/src/io/io.go:562:26: leaking param: w
+/usr/local/go/src/io/io.go:563:9: &teeReader{...} escapes to heap
+/usr/local/go/src/io/io.go:571:26: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:571:26:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:571:26:     from t.r.Read(p) (call parameter) at /usr/local/go/src/io/io.go:572:19
+/usr/local/go/src/io/io.go:571:7: parameter t leaks to {heap} with derefs=1:
+/usr/local/go/src/io/io.go:571:7:   flow: {heap} = *t:
+/usr/local/go/src/io/io.go:571:7:     from t.r (dot of pointer) at /usr/local/go/src/io/io.go:572:12
+/usr/local/go/src/io/io.go:571:7:     from t.r.Read(p) (call parameter) at /usr/local/go/src/io/io.go:572:19
+/usr/local/go/src/io/io.go:571:7: leaking param content: t
+/usr/local/go/src/io/io.go:571:26: leaking param: p
+/usr/local/go/src/io/io.go:591:22: p does not escape
+/usr/local/go/src/io/io.go:595:28: s does not escape
+/usr/local/go/src/io/io.go:601:3: b escapes to heap:
+/usr/local/go/src/io/io.go:601:3:   flow: ~r0 = &b:
+/usr/local/go/src/io/io.go:601:3:     from &b (address-of) at /usr/local/go/src/io/io.go:602:10
+/usr/local/go/src/io/io.go:601:3:     from &b (interface-converted) at /usr/local/go/src/io/io.go:602:10
+/usr/local/go/src/io/io.go:601:3:     from return &b (return) at /usr/local/go/src/io/io.go:602:3
+/usr/local/go/src/io/io.go:601:12: make([]byte, 8192) escapes to heap:
+/usr/local/go/src/io/io.go:601:12:   flow: b = &{storage for make([]byte, 8192)}:
+/usr/local/go/src/io/io.go:601:12:     from make([]byte, 8192) (spill) at /usr/local/go/src/io/io.go:601:12
+/usr/local/go/src/io/io.go:601:12:     from b := make([]byte, 8192) (assign) at /usr/local/go/src/io/io.go:601:5
+/usr/local/go/src/io/io.go:601:3: moved to heap: b
+/usr/local/go/src/io/io.go:601:12: make([]byte, 8192) escapes to heap
+/usr/local/go/src/io/io.go:606:25: parameter r leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:606:25:   flow: {heap} = r:
+/usr/local/go/src/io/io.go:606:25:     from r.Read(*bufp) (call parameter) at /usr/local/go/src/io/io.go:610:25
+/usr/local/go/src/io/io.go:606:25: leaking param: r
+/usr/local/go/src/io/io.go:625:18: nopCloser{...} escapes to heap:
+/usr/local/go/src/io/io.go:625:18:   flow: ~r0 = &{storage for nopCloser{...}}:
+/usr/local/go/src/io/io.go:625:18:     from nopCloser{...} (spill) at /usr/local/go/src/io/io.go:625:18
+/usr/local/go/src/io/io.go:625:18:     from return nopCloser{...} (return) at /usr/local/go/src/io/io.go:625:2
+/usr/local/go/src/io/io.go:624:16: parameter r leaks to {storage for nopCloser{...}} with derefs=0:
+/usr/local/go/src/io/io.go:624:16:   flow: {storage for nopCloser{...}} = r:
+/usr/local/go/src/io/io.go:624:16:     from nopCloser{...} (struct literal element) at /usr/local/go/src/io/io.go:625:18
+/usr/local/go/src/io/io.go:624:16:     from nopCloser{...} (interface-converted) at /usr/local/go/src/io/io.go:625:18
+/usr/local/go/src/io/io.go:624:16: leaking param: r
+/usr/local/go/src/io/io.go:625:18: nopCloser{...} escapes to heap
+/usr/local/go/src/io/io.go:639:11: make([]byte, 0, 512) escapes to heap:
+/usr/local/go/src/io/io.go:639:11:   flow: b = &{storage for make([]byte, 0, 512)}:
+/usr/local/go/src/io/io.go:639:11:     from make([]byte, 0, 512) (spill) at /usr/local/go/src/io/io.go:639:11
+/usr/local/go/src/io/io.go:639:11:     from b := make([]byte, 0, 512) (assign) at /usr/local/go/src/io/io.go:639:4
+/usr/local/go/src/io/io.go:639:11:   flow: {heap} = b:
+/usr/local/go/src/io/io.go:639:11:     from b[len(b):cap(b)] (slice) at /usr/local/go/src/io/io.go:645:21
+/usr/local/go/src/io/io.go:639:11:     from r.Read(b[len(b):cap(b)]) (call parameter) at /usr/local/go/src/io/io.go:645:19
+/usr/local/go/src/io/io.go:638:14: parameter r leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:638:14:   flow: {heap} = r:
+/usr/local/go/src/io/io.go:638:14:     from r.Read(b[len(b):cap(b)]) (call parameter) at /usr/local/go/src/io/io.go:645:19
+/usr/local/go/src/io/io.go:638:14: leaking param: r
+/usr/local/go/src/io/io.go:639:11: make([]byte, 0, 512) escapes to heap
+/usr/local/go/src/io/multi.go:30:4: eofReader{} escapes to heap:
+/usr/local/go/src/io/multi.go:30:4:   flow: {heap} = &{storage for eofReader{}}:
+/usr/local/go/src/io/multi.go:30:4:     from eofReader{} (spill) at /usr/local/go/src/io/multi.go:30:4
+/usr/local/go/src/io/multi.go:30:4:     from mr.readers[0] = eofReader{} (assign) at /usr/local/go/src/io/multi.go:30:18
+/usr/local/go/src/io/multi.go:31:15: (*multiReader).Read ignoring self-assignment in mr.readers = mr.readers[1:]
+/usr/local/go/src/io/multi.go:17:29: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/multi.go:17:29:   flow: {heap} = p:
+/usr/local/go/src/io/multi.go:17:29:     from mr.readers[0].Read(p) (call parameter) at /usr/local/go/src/io/multi.go:26:30
+/usr/local/go/src/io/multi.go:17:7: parameter mr leaks to {heap} with derefs=2:
+/usr/local/go/src/io/multi.go:17:7:   flow: {heap} = **mr:
+/usr/local/go/src/io/multi.go:17:7:     from mr.readers (dot of pointer) at /usr/local/go/src/io/multi.go:26:14
+/usr/local/go/src/io/multi.go:17:7:     from mr.readers[0] (dot of pointer) at /usr/local/go/src/io/multi.go:26:22
+/usr/local/go/src/io/multi.go:17:7:     from mr.readers[0].Read(p) (call parameter) at /usr/local/go/src/io/multi.go:26:30
+/usr/local/go/src/io/multi.go:17:7: leaking param content: mr
+/usr/local/go/src/io/multi.go:17:29: leaking param: p
+/usr/local/go/src/io/multi.go:30:4: eofReader{} escapes to heap
+/usr/local/go/src/io/multi.go:49:11: make([]Reader, len(readers)) escapes to heap:
+/usr/local/go/src/io/multi.go:49:11:   flow: {heap} = &{storage for make([]Reader, len(readers))}:
+/usr/local/go/src/io/multi.go:49:11:     from make([]Reader, len(readers)) (non-constant size) at /usr/local/go/src/io/multi.go:49:11
+/usr/local/go/src/io/multi.go:48:18: parameter readers leaks to {heap} with derefs=1:
+/usr/local/go/src/io/multi.go:48:18:   flow: {heap} = *readers:
+/usr/local/go/src/io/multi.go:48:18:     from copy(r, readers) (call parameter) at /usr/local/go/src/io/multi.go:50:6
+/usr/local/go/src/io/multi.go:48:18:     from copy(r, readers) (copied slice) at /usr/local/go/src/io/multi.go:50:6
+/usr/local/go/src/io/multi.go:51:9: &multiReader{...} escapes to heap:
+/usr/local/go/src/io/multi.go:51:9:   flow: ~r0 = &{storage for &multiReader{...}}:
+/usr/local/go/src/io/multi.go:51:9:     from &multiReader{...} (spill) at /usr/local/go/src/io/multi.go:51:9
+/usr/local/go/src/io/multi.go:51:9:     from &multiReader{...} (interface-converted) at /usr/local/go/src/io/multi.go:51:9
+/usr/local/go/src/io/multi.go:51:9:     from return &multiReader{...} (return) at /usr/local/go/src/io/multi.go:51:2
+/usr/local/go/src/io/multi.go:48:18: leaking param content: readers
+/usr/local/go/src/io/multi.go:49:11: make([]Reader, len(readers)) escapes to heap
+/usr/local/go/src/io/multi.go:51:9: &multiReader{...} escapes to heap
+/usr/local/go/src/io/multi.go:58:29: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/multi.go:58:29:   flow: {heap} = p:
+/usr/local/go/src/io/multi.go:58:29:     from w.Write(p) (call parameter) at /usr/local/go/src/io/multi.go:60:19
+/usr/local/go/src/io/multi.go:58:7: parameter t leaks to {heap} with derefs=2:
+/usr/local/go/src/io/multi.go:58:7:   flow: {temp} = *t:
+/usr/local/go/src/io/multi.go:58:7:     from t.writers (dot of pointer) at /usr/local/go/src/io/multi.go:59:21
+/usr/local/go/src/io/multi.go:58:7:   flow: w = *{temp}:
+/usr/local/go/src/io/multi.go:58:7:     from for loop (range-deref) at /usr/local/go/src/io/multi.go:59:14
+/usr/local/go/src/io/multi.go:58:7:   flow: {heap} = w:
+/usr/local/go/src/io/multi.go:58:7:     from w.Write(p) (call parameter) at /usr/local/go/src/io/multi.go:60:19
+/usr/local/go/src/io/multi.go:58:7: leaking param content: t
+/usr/local/go/src/io/multi.go:58:29: leaking param: p
+/usr/local/go/src/io/multi.go:81:15: ([]byte)(s) escapes to heap:
+/usr/local/go/src/io/multi.go:81:15:   flow: p = &{storage for ([]byte)(s)}:
+/usr/local/go/src/io/multi.go:81:15:     from ([]byte)(s) (spill) at /usr/local/go/src/io/multi.go:81:15
+/usr/local/go/src/io/multi.go:81:15:     from p = ([]byte)(s) (assign) at /usr/local/go/src/io/multi.go:81:7
+/usr/local/go/src/io/multi.go:81:15:   flow: {heap} = p:
+/usr/local/go/src/io/multi.go:81:15:     from w.Write(p) (call parameter) at /usr/local/go/src/io/multi.go:83:20
+/usr/local/go/src/io/multi.go:74:7: parameter t leaks to {heap} with derefs=2:
+/usr/local/go/src/io/multi.go:74:7:   flow: {temp} = *t:
+/usr/local/go/src/io/multi.go:74:7:     from t.writers (dot of pointer) at /usr/local/go/src/io/multi.go:76:21
+/usr/local/go/src/io/multi.go:74:7:   flow: w = *{temp}:
+/usr/local/go/src/io/multi.go:74:7:     from for loop (range-deref) at /usr/local/go/src/io/multi.go:76:14
+/usr/local/go/src/io/multi.go:74:7:   flow: {heap} = w:
+/usr/local/go/src/io/multi.go:74:7:     from w.Write(p) (call parameter) at /usr/local/go/src/io/multi.go:83:20
+/usr/local/go/src/io/multi.go:74:35: parameter s leaks to {heap} with derefs=0:
+/usr/local/go/src/io/multi.go:74:35:   flow: {heap} = s:
+/usr/local/go/src/io/multi.go:74:35:     from sw.WriteString(s) (call parameter) at /usr/local/go/src/io/multi.go:78:27
+/usr/local/go/src/io/multi.go:74:7: leaking param content: t
+/usr/local/go/src/io/multi.go:74:35: leaking param: s
+/usr/local/go/src/io/multi.go:81:15: ([]byte)(s) escapes to heap
+/usr/local/go/src/io/multi.go:103:20: make([]Writer, 0, len(writers)) escapes to heap:
+/usr/local/go/src/io/multi.go:103:20:   flow: {heap} = &{storage for make([]Writer, 0, len(writers))}:
+/usr/local/go/src/io/multi.go:103:20:     from make([]Writer, 0, len(writers)) (non-constant size) at /usr/local/go/src/io/multi.go:103:20
+/usr/local/go/src/io/multi.go:102:18: parameter writers leaks to {heap} with derefs=1:
+/usr/local/go/src/io/multi.go:102:18:   flow: {temp} = writers:
+/usr/local/go/src/io/multi.go:102:18:   flow: w = *{temp}:
+/usr/local/go/src/io/multi.go:102:18:     from for loop (range-deref) at /usr/local/go/src/io/multi.go:104:14
+/usr/local/go/src/io/multi.go:102:18:   flow: {heap} = w:
+/usr/local/go/src/io/multi.go:102:18:     from append(allWriters, w) (call parameter) at /usr/local/go/src/io/multi.go:108:23
+/usr/local/go/src/io/multi.go:111:9: &multiWriter{...} escapes to heap:
+/usr/local/go/src/io/multi.go:111:9:   flow: ~r0 = &{storage for &multiWriter{...}}:
+/usr/local/go/src/io/multi.go:111:9:     from &multiWriter{...} (spill) at /usr/local/go/src/io/multi.go:111:9
+/usr/local/go/src/io/multi.go:111:9:     from &multiWriter{...} (interface-converted) at /usr/local/go/src/io/multi.go:111:9
+/usr/local/go/src/io/multi.go:111:9:     from return &multiWriter{...} (return) at /usr/local/go/src/io/multi.go:111:2
+/usr/local/go/src/io/multi.go:102:18: leaking param content: writers
+/usr/local/go/src/io/multi.go:103:20: make([]Writer, 0, len(writers)) escapes to heap
+/usr/local/go/src/io/multi.go:111:9: &multiWriter{...} escapes to heap
+/usr/local/go/src/io/pipe.go:23:9: (*onceError).Store capturing by value: .autotmp_3 (addr=false assign=false width=8)
+/usr/local/go/src/io/pipe.go:21:27: parameter err leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:21:27:   flow: {heap} = err:
+/usr/local/go/src/io/pipe.go:21:27:     from a.err = err (assign) at /usr/local/go/src/io/pipe.go:27:8
+/usr/local/go/src/io/pipe.go:21:7: parameter a leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:21:7:   flow: .autotmp_3 = a:
+/usr/local/go/src/io/pipe.go:21:7:     from a.Mutex (dot of pointer) at /usr/local/go/src/io/pipe.go:23:9
+/usr/local/go/src/io/pipe.go:21:7:     from a.Mutex (address-of) at /usr/local/go/src/io/pipe.go:23:9
+/usr/local/go/src/io/pipe.go:21:7:     from .autotmp_3 = a.Mutex (assign) at /usr/local/go/src/io/pipe.go:23:9
+/usr/local/go/src/io/pipe.go:21:7:   flow: {heap} = .autotmp_3:
+/usr/local/go/src/io/pipe.go:21:7:     from (*sync.Mutex).Unlock(.autotmp_3) (call parameter) at /usr/local/go/src/io/pipe.go:23:16
+/usr/local/go/src/io/pipe.go:21:7: leaking param: a
+/usr/local/go/src/io/pipe.go:21:27: leaking param: err
+/usr/local/go/src/io/pipe.go:31:9: (*onceError).Load capturing by value: .autotmp_3 (addr=false assign=false width=8)
+/usr/local/go/src/io/pipe.go:29:7: parameter a leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:29:7:   flow: .autotmp_3 = a:
+/usr/local/go/src/io/pipe.go:29:7:     from a.Mutex (dot of pointer) at /usr/local/go/src/io/pipe.go:31:9
+/usr/local/go/src/io/pipe.go:29:7:     from a.Mutex (address-of) at /usr/local/go/src/io/pipe.go:31:9
+/usr/local/go/src/io/pipe.go:29:7:     from .autotmp_3 = a.Mutex (assign) at /usr/local/go/src/io/pipe.go:31:9
+/usr/local/go/src/io/pipe.go:29:7:   flow: {heap} = .autotmp_3:
+/usr/local/go/src/io/pipe.go:29:7:     from (*sync.Mutex).Unlock(.autotmp_3) (call parameter) at /usr/local/go/src/io/pipe.go:31:16
+/usr/local/go/src/io/pipe.go:29:7: parameter a leaks to ~r0 with derefs=1:
+/usr/local/go/src/io/pipe.go:29:7:   flow: ~r0 = *a:
+/usr/local/go/src/io/pipe.go:29:7:     from a.err (dot of pointer) at /usr/local/go/src/io/pipe.go:32:10
+/usr/local/go/src/io/pipe.go:29:7:     from return a.err (return) at /usr/local/go/src/io/pipe.go:32:2
+/usr/local/go/src/io/pipe.go:29:7: leaking param: a
+/usr/local/go/src/io/pipe.go:108:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:108:7:   flow: {heap} = p:
+/usr/local/go/src/io/pipe.go:108:7:     from p.rerr (dot of pointer) at /usr/local/go/src/io/pipe.go:109:11
+/usr/local/go/src/io/pipe.go:108:7:     from p.rerr (address-of) at /usr/local/go/src/io/pipe.go:109:16
+/usr/local/go/src/io/pipe.go:108:7:     from (*onceError).Load(p.rerr) (call parameter) at /usr/local/go/src/io/pipe.go:109:21
+/usr/local/go/src/io/pipe.go:108:7: leaking param: p
+/usr/local/go/src/io/pipe.go:50:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:50:7:   flow: {heap} = p:
+/usr/local/go/src/io/pipe.go:50:7:     from (*pipe).readCloseError(p) (call parameter) at /usr/local/go/src/io/pipe.go:53:29
+/usr/local/go/src/io/pipe.go:50:7: leaking param: p
+/usr/local/go/src/io/pipe.go:50:21: b does not escape
+/usr/local/go/src/io/pipe.go:67:7: (*pipe).closeRead capturing by value: p (addr=false assign=false width=8)
+/usr/local/go/src/io/pipe.go:67:26: parameter err leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:67:26:   flow: {heap} = err:
+/usr/local/go/src/io/pipe.go:67:26:     from (*onceError).Store(p.rerr, err) (call parameter) at /usr/local/go/src/io/pipe.go:71:14
+/usr/local/go/src/io/pipe.go:67:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:67:7:   flow: {heap} = p:
+/usr/local/go/src/io/pipe.go:67:7:     from p.rerr (dot of pointer) at /usr/local/go/src/io/pipe.go:71:3
+/usr/local/go/src/io/pipe.go:67:7:     from p.rerr (address-of) at /usr/local/go/src/io/pipe.go:71:8
+/usr/local/go/src/io/pipe.go:67:7:     from (*onceError).Store(p.rerr, err) (call parameter) at /usr/local/go/src/io/pipe.go:71:14
+/usr/local/go/src/io/pipe.go:67:7: leaking param: p
+/usr/local/go/src/io/pipe.go:67:26: leaking param: err
+/usr/local/go/src/io/pipe.go:72:12: func literal does not escape
+/usr/local/go/src/io/pipe.go:117:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:117:7:   flow: {heap} = p:
+/usr/local/go/src/io/pipe.go:117:7:     from p.werr (dot of pointer) at /usr/local/go/src/io/pipe.go:118:11
+/usr/local/go/src/io/pipe.go:117:7:     from p.werr (address-of) at /usr/local/go/src/io/pipe.go:118:16
+/usr/local/go/src/io/pipe.go:117:7:     from (*onceError).Load(p.werr) (call parameter) at /usr/local/go/src/io/pipe.go:118:21
+/usr/local/go/src/io/pipe.go:117:7: leaking param: p
+/usr/local/go/src/io/pipe.go:82:15: (*pipe).write capturing by value: .autotmp_7 (addr=false assign=false width=8)
+/usr/local/go/src/io/pipe.go:76:22: parameter b leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:76:22:   flow: {heap} = b:
+/usr/local/go/src/io/pipe.go:76:22:     from p.wrCh <- b (send) at /usr/local/go/src/io/pipe.go:87:15
+/usr/local/go/src/io/pipe.go:76:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:76:7:   flow: {heap} = p:
+/usr/local/go/src/io/pipe.go:76:7:     from (*pipe).writeCloseError(p) (call parameter) at /usr/local/go/src/io/pipe.go:79:30
+/usr/local/go/src/io/pipe.go:76:7: leaking param: p
+/usr/local/go/src/io/pipe.go:76:22: leaking param: b
+/usr/local/go/src/io/pipe.go:98:7: (*pipe).closeWrite capturing by value: p (addr=false assign=false width=8)
+/usr/local/go/src/io/pipe.go:98:27: parameter err leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:98:27:   flow: {heap} = err:
+/usr/local/go/src/io/pipe.go:98:27:     from (*onceError).Store(p.werr, err) (call parameter) at /usr/local/go/src/io/pipe.go:102:14
+/usr/local/go/src/io/pipe.go:98:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:98:7:   flow: {heap} = p:
+/usr/local/go/src/io/pipe.go:98:7:     from p.werr (dot of pointer) at /usr/local/go/src/io/pipe.go:102:3
+/usr/local/go/src/io/pipe.go:98:7:     from p.werr (address-of) at /usr/local/go/src/io/pipe.go:102:8
+/usr/local/go/src/io/pipe.go:98:7:     from (*onceError).Store(p.werr, err) (call parameter) at /usr/local/go/src/io/pipe.go:102:14
+/usr/local/go/src/io/pipe.go:98:7: leaking param: p
+/usr/local/go/src/io/pipe.go:98:27: leaking param: err
+/usr/local/go/src/io/pipe.go:103:12: func literal does not escape
+/usr/local/go/src/io/pipe.go:135:7: parameter r leaks to {heap} with derefs=1:
+/usr/local/go/src/io/pipe.go:135:7:   flow: {heap} = *r:
+/usr/local/go/src/io/pipe.go:135:7:     from r.p (dot of pointer) at /usr/local/go/src/io/pipe.go:136:10
+/usr/local/go/src/io/pipe.go:135:7:     from (*pipe).read(r.p, data) (call parameter) at /usr/local/go/src/io/pipe.go:136:17
+/usr/local/go/src/io/pipe.go:135:7: leaking param content: r
+/usr/local/go/src/io/pipe.go:135:27: data does not escape
+/usr/local/go/src/io/pipe.go:141:7: parameter r leaks to {heap} with derefs=1:
+/usr/local/go/src/io/pipe.go:141:7:   flow: r = r:
+/usr/local/go/src/io/pipe.go:141:7:     from r, err := r, nil (assign-pair) at /usr/local/go/src/io/pipe.go:142:25
+/usr/local/go/src/io/pipe.go:141:7:   flow: {heap} = *r:
+/usr/local/go/src/io/pipe.go:141:7:     from r.p (dot of pointer) at /usr/local/go/src/io/pipe.go:142:25
+/usr/local/go/src/io/pipe.go:141:7:     from (*pipe).closeRead(r.p, err) (call parameter) at /usr/local/go/src/io/pipe.go:142:25
+/usr/local/go/src/io/pipe.go:141:7: leaking param content: r
+/usr/local/go/src/io/pipe.go:150:37: parameter err leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:150:37:   flow: {heap} = err:
+/usr/local/go/src/io/pipe.go:150:37:     from (*pipe).closeRead(r.p, err) (call parameter) at /usr/local/go/src/io/pipe.go:151:22
+/usr/local/go/src/io/pipe.go:150:7: parameter r leaks to {heap} with derefs=1:
+/usr/local/go/src/io/pipe.go:150:7:   flow: {heap} = *r:
+/usr/local/go/src/io/pipe.go:150:7:     from r.p (dot of pointer) at /usr/local/go/src/io/pipe.go:151:10
+/usr/local/go/src/io/pipe.go:150:7:     from (*pipe).closeRead(r.p, err) (call parameter) at /usr/local/go/src/io/pipe.go:151:22
+/usr/local/go/src/io/pipe.go:150:7: leaking param content: r
+/usr/local/go/src/io/pipe.go:150:37: leaking param: err
+/usr/local/go/src/io/pipe.go:164:28: parameter data leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:164:28:   flow: {heap} = data:
+/usr/local/go/src/io/pipe.go:164:28:     from (*pipe).write(w.p, data) (call parameter) at /usr/local/go/src/io/pipe.go:165:18
+/usr/local/go/src/io/pipe.go:164:7: parameter w leaks to {heap} with derefs=1:
+/usr/local/go/src/io/pipe.go:164:7:   flow: {heap} = *w:
+/usr/local/go/src/io/pipe.go:164:7:     from w.p (dot of pointer) at /usr/local/go/src/io/pipe.go:165:10
+/usr/local/go/src/io/pipe.go:164:7:     from (*pipe).write(w.p, data) (call parameter) at /usr/local/go/src/io/pipe.go:165:18
+/usr/local/go/src/io/pipe.go:164:7: leaking param content: w
+/usr/local/go/src/io/pipe.go:164:28: leaking param: data
+/usr/local/go/src/io/pipe.go:170:7: parameter w leaks to {heap} with derefs=1:
+/usr/local/go/src/io/pipe.go:170:7:   flow: w = w:
+/usr/local/go/src/io/pipe.go:170:7:     from w, err := w, nil (assign-pair) at /usr/local/go/src/io/pipe.go:171:25
+/usr/local/go/src/io/pipe.go:170:7:   flow: {heap} = *w:
+/usr/local/go/src/io/pipe.go:170:7:     from w.p (dot of pointer) at /usr/local/go/src/io/pipe.go:171:25
+/usr/local/go/src/io/pipe.go:170:7:     from (*pipe).closeWrite(w.p, err) (call parameter) at /usr/local/go/src/io/pipe.go:171:25
+/usr/local/go/src/io/pipe.go:170:7: leaking param content: w
+/usr/local/go/src/io/pipe.go:180:37: parameter err leaks to {heap} with derefs=0:
+/usr/local/go/src/io/pipe.go:180:37:   flow: {heap} = err:
+/usr/local/go/src/io/pipe.go:180:37:     from (*pipe).closeWrite(w.p, err) (call parameter) at /usr/local/go/src/io/pipe.go:181:23
+/usr/local/go/src/io/pipe.go:180:7: parameter w leaks to {heap} with derefs=1:
+/usr/local/go/src/io/pipe.go:180:7:   flow: {heap} = *w:
+/usr/local/go/src/io/pipe.go:180:7:     from w.p (dot of pointer) at /usr/local/go/src/io/pipe.go:181:10
+/usr/local/go/src/io/pipe.go:180:7:     from (*pipe).closeWrite(w.p, err) (call parameter) at /usr/local/go/src/io/pipe.go:181:23
+/usr/local/go/src/io/pipe.go:180:7: leaking param content: w
+/usr/local/go/src/io/pipe.go:180:37: leaking param: err
+/usr/local/go/src/io/pipe.go:205:25: &PipeWriter{...} escapes to heap:
+/usr/local/go/src/io/pipe.go:205:25:   flow: ~r1 = &{storage for &PipeWriter{...}}:
+/usr/local/go/src/io/pipe.go:205:25:     from &PipeWriter{...} (spill) at /usr/local/go/src/io/pipe.go:205:25
+/usr/local/go/src/io/pipe.go:205:25:     from return &PipeReader{...}, &PipeWriter{...} (return) at /usr/local/go/src/io/pipe.go:205:2
+/usr/local/go/src/io/pipe.go:200:7: &pipe{...} escapes to heap:
+/usr/local/go/src/io/pipe.go:200:7:   flow: p = &{storage for &pipe{...}}:
+/usr/local/go/src/io/pipe.go:200:7:     from &pipe{...} (spill) at /usr/local/go/src/io/pipe.go:200:7
+/usr/local/go/src/io/pipe.go:200:7:     from p := &pipe{...} (assign) at /usr/local/go/src/io/pipe.go:200:4
+/usr/local/go/src/io/pipe.go:200:7:   flow: {storage for &PipeWriter{...}} = p:
+/usr/local/go/src/io/pipe.go:200:7:     from PipeWriter{...} (struct literal element) at /usr/local/go/src/io/pipe.go:205:36
+/usr/local/go/src/io/pipe.go:205:9: &PipeReader{...} escapes to heap:
+/usr/local/go/src/io/pipe.go:205:9:   flow: ~r0 = &{storage for &PipeReader{...}}:
+/usr/local/go/src/io/pipe.go:205:9:     from &PipeReader{...} (spill) at /usr/local/go/src/io/pipe.go:205:9
+/usr/local/go/src/io/pipe.go:205:9:     from return &PipeReader{...}, &PipeWriter{...} (return) at /usr/local/go/src/io/pipe.go:205:2
+/usr/local/go/src/io/pipe.go:200:7: &pipe{...} escapes to heap
+/usr/local/go/src/io/pipe.go:205:9: &PipeReader{...} escapes to heap
+/usr/local/go/src/io/pipe.go:205:25: &PipeWriter{...} escapes to heap
+/usr/local/go/src/io/pipe.go:36:31: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/pipe.go:36:31:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/pipe.go:36:31:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/pipe.go:36:31
+/usr/local/go/src/io/pipe.go:36:31:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/pipe.go:36:31
+/usr/local/go/src/io/pipe.go:36:31:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/pipe.go:36:31
+/usr/local/go/src/io/pipe.go:36:31:   flow: {heap} = ~R0:
+/usr/local/go/src/io/pipe.go:36:31:     from ErrClosedPipe = ~R0 (assign) at /usr/local/go/src/io/pipe.go:36:5
+/usr/local/go/src/io/io.go:518:27: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:518:27:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:518:27:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:518:27
+/usr/local/go/src/io/io.go:518:27:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:518:27
+/usr/local/go/src/io/io.go:518:27:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:518:27
+/usr/local/go/src/io/io.go:518:27:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:518:27:     from errOffset = ~R0 (assign) at /usr/local/go/src/io/io.go:518:5
+/usr/local/go/src/io/io.go:517:27: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:517:27:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:517:27:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:517:27
+/usr/local/go/src/io/io.go:517:27:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:517:27
+/usr/local/go/src/io/io.go:517:27:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:517:27
+/usr/local/go/src/io/io.go:517:27:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:517:27:     from errWhence = ~R0 (assign) at /usr/local/go/src/io/io.go:517:5
+/usr/local/go/src/io/io.go:53:31: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:53:31:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:53:31:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:53:31
+/usr/local/go/src/io/io.go:53:31:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:53:31
+/usr/local/go/src/io/io.go:53:31:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:53:31
+/usr/local/go/src/io/io.go:53:31:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:53:31:     from ErrNoProgress = ~R0 (assign) at /usr/local/go/src/io/io.go:53:5
+/usr/local/go/src/io/io.go:48:34: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:48:34:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:48:34:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:48:34
+/usr/local/go/src/io/io.go:48:34:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:48:34
+/usr/local/go/src/io/io.go:48:34:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:48:34
+/usr/local/go/src/io/io.go:48:34:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:48:34:     from ErrUnexpectedEOF = ~R0 (assign) at /usr/local/go/src/io/io.go:48:5
+/usr/local/go/src/io/io.go:44:21: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:44:21:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:44:21:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:44:21
+/usr/local/go/src/io/io.go:44:21:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:44:21
+/usr/local/go/src/io/io.go:44:21:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:44:21
+/usr/local/go/src/io/io.go:44:21:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:44:21:     from EOF = ~R0 (assign) at /usr/local/go/src/io/io.go:44:5
+/usr/local/go/src/io/io.go:35:32: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:35:32:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:35:32:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:35:32
+/usr/local/go/src/io/io.go:35:32:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:35:32
+/usr/local/go/src/io/io.go:35:32:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:35:32
+/usr/local/go/src/io/io.go:35:32:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:35:32:     from ErrShortBuffer = ~R0 (assign) at /usr/local/go/src/io/io.go:35:5
+/usr/local/go/src/io/io.go:32:33: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:32:33:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:32:33:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:32:33
+/usr/local/go/src/io/io.go:32:33:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:32:33
+/usr/local/go/src/io/io.go:32:33:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:32:33
+/usr/local/go/src/io/io.go:32:33:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:32:33:     from errInvalidWrite = ~R0 (assign) at /usr/local/go/src/io/io.go:32:5
+/usr/local/go/src/io/io.go:29:31: &errors.errorString{...} escapes to heap:
+/usr/local/go/src/io/io.go:29:31:   flow: ~R0 = &{storage for &errors.errorString{...}}:
+/usr/local/go/src/io/io.go:29:31:     from &errors.errorString{...} (spill) at /usr/local/go/src/io/io.go:29:31
+/usr/local/go/src/io/io.go:29:31:     from error(&errors.errorString{...}) (interface-converted) at /usr/local/go/src/io/io.go:29:31
+/usr/local/go/src/io/io.go:29:31:     from ~R0 = error(&errors.errorString{...}) (assign-pair) at /usr/local/go/src/io/io.go:29:31
+/usr/local/go/src/io/io.go:29:31:   flow: {heap} = ~R0:
+/usr/local/go/src/io/io.go:29:31:     from ErrShortWrite = ~R0 (assign) at /usr/local/go/src/io/io.go:29:5
+/usr/local/go/src/io/io.go:29:31: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:32:33: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:35:32: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:44:21: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:48:34: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:53:31: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:517:27: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:518:27: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/pipe.go:36:31: &errors.errorString{...} escapes to heap
+/usr/local/go/src/io/io.go:606:25: parameter r leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:606:25:   flow: {heap} = r:
+/usr/local/go/src/io/io.go:606:25:     from discard.ReadFrom(.this, r) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:97:8: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:97:8:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:97:8:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Write(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: inlining call to nopCloser.Close
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Reader.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=1:
+<autogenerated>:1:   flow: {heap} = *.this:
+<autogenerated>:1:     from .this.Reader (dot of pointer) at <autogenerated>:1
+<autogenerated>:1:     from .this.Reader.Read(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Reader.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Reader (dot) at <autogenerated>:1
+<autogenerated>:1:     from .this.Reader.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Close() (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: inlining call to eofReader.Read
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.ReadByte() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.ReadByte() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.UnreadByte() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.WriteByte(c) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Close() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Mutex (dot of pointer) at <autogenerated>:1
+<autogenerated>:1:     from .this.Mutex (address-of) at <autogenerated>:1
+<autogenerated>:1:     from (*sync.Mutex).Lock(.this.Mutex) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Mutex (dot of pointer) at <autogenerated>:1
+<autogenerated>:1:     from .this.Mutex (address-of) at <autogenerated>:1
+<autogenerated>:1:     from (*sync.Mutex).TryLock(.this.Mutex) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Mutex (dot of pointer) at <autogenerated>:1
+<autogenerated>:1:     from .this.Mutex (address-of) at <autogenerated>:1
+<autogenerated>:1:     from (*sync.Mutex).Unlock(.this.Mutex) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Mutex (dot of pointer) at <autogenerated>:1
+<autogenerated>:1:     from .this.Mutex (address-of) at <autogenerated>:1
+<autogenerated>:1:     from (*sync.Mutex).lockSlow(.this.Mutex) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Mutex (dot of pointer) at <autogenerated>:1
+<autogenerated>:1:     from .this.Mutex (address-of) at <autogenerated>:1
+<autogenerated>:1:     from (*sync.Mutex).unlockSlow(.this.Mutex, new) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Close() (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Seek(offset, whence) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Seek(offset, whence) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Close() (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:97:8: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:97:8:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:97:8:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Write(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Seek(offset, whence) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:97:8: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:97:8:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:97:8:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Write(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:84:7: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:84:7:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:84:7:     from .this.Read(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Read(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:97:8: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:97:8:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:97:8:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Write(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:227:9: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:227:9:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:227:9:     from .this.ReadAt(p, off) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.ReadAt(p, off) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:186:11: parameter r leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:186:11:   flow: {heap} = r:
+/usr/local/go/src/io/io.go:186:11:     from .this.ReadFrom(r) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.ReadFrom(r) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.ReadRune() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.ReadRune() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.UnreadRune() (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Seek(offset, whence) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:304:14: parameter s leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:304:14:   flow: {heap} = s:
+/usr/local/go/src/io/io.go:304:14:     from .this.WriteString(s) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.WriteString(s) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Close() (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:97:8: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:97:8:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:97:8:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Seek(offset, whence) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:97:8: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:97:8:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:97:8:     from .this.Write(p) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.Write(p) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:246:10: parameter p leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:246:10:   flow: {heap} = p:
+/usr/local/go/src/io/io.go:246:10:     from .this.WriteAt(p, off) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.WriteAt(p, off) (call parameter) at <autogenerated>:1
+/usr/local/go/src/io/io.go:197:10: parameter w leaks to {heap} with derefs=0:
+/usr/local/go/src/io/io.go:197:10:   flow: {heap} = w:
+/usr/local/go/src/io/io.go:197:10:     from .this.WriteTo(w) (call parameter) at <autogenerated>:1
+<autogenerated>:1: parameter .this leaks to {heap} with derefs=0:
+<autogenerated>:1:   flow: {heap} = .this:
+<autogenerated>:1:     from .this.WriteTo(w) (call parameter) at <autogenerated>:1
