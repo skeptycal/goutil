@@ -1,0 +1,26 @@
+
+mode: atomic
+github.com/skeptycal/maptext/new.go:3.33,13.2 2 0
+github.com/skeptycal/maptext/new.go:15.66,26.2 2 4
+github.com/skeptycal/maptext/new.go:28.46,40.2 3 14
+github.com/skeptycal/maptext/node.go:24.32,26.2 1 0
+github.com/skeptycal/maptext/node.go:28.26,29.21 1 0
+github.com/skeptycal/maptext/node.go:32.2,32.21 1 0
+github.com/skeptycal/maptext/node.go:29.21,31.3 1 0
+github.com/skeptycal/maptext/node.go:34.40,34.89 1 0
+github.com/skeptycal/maptext/node.go:35.40,35.83 1 0
+github.com/skeptycal/maptext/node.go:36.40,36.87 1 0
+github.com/skeptycal/maptext/node.go:37.40,37.67 1 22
+github.com/skeptycal/maptext/node.go:38.37,41.2 2 2
+github.com/skeptycal/maptext/node.go:42.38,45.2 2 2
+github.com/skeptycal/maptext/node.go:47.26,47.27 0 0
+github.com/skeptycal/maptext/nodemap.go:31.32,33.2 1 1
+github.com/skeptycal/maptext/nodemap.go:44.34,54.2 3 1
+github.com/skeptycal/maptext/maptext.go:29.13,30.39 1 1
+github.com/skeptycal/maptext/maptext.go:30.39,32.3 1 0
+github.com/skeptycal/maptext/maptext.go:59.30,60.15 1 0
+github.com/skeptycal/maptext/maptext.go:63.2,63.12 1 0
+github.com/skeptycal/maptext/maptext.go:60.15,62.3 1 0
+github.com/skeptycal/maptext/maptext.go:66.31,66.55 1 0
+github.com/skeptycal/maptext/maptext.go:68.32,68.56 1 0
+github.com/skeptycal/maptext/maptext.go:70.37,70.61 1 51
