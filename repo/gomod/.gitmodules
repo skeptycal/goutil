@@ -1,0 +1,6 @@
+[submodule "goconfig"]
+	path = goconfig
+	url = ./goconfig
+[submodule "universaltests"]
+	path = universaltests
+	url = ./universaltests
