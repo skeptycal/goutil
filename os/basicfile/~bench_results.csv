@@ -1,0 +1,10 @@
+benchmark/test         	  time	      ns/op	     B/op	      allocs/op
+BenchmarkGenRandTestData/genRandTestData(8)(local)-8         	  478506	      2438 ns/op	     240 B/op	      10 allocs/op
+BenchmarkGenRandTestData/genRandTestData(16)(local)-8        	  258319	      4623 ns/op	     432 B/op	      18 allocs/op
+BenchmarkGenRandTestData/genRandTestData(32)(local)-8        	  132312	      9121 ns/op	     816 B/op	      34 allocs/op
+BenchmarkGenRandTestData/genRandTestData(64)(local)-8        	   66246	     18167 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkGenRandTestData/genRandTestData(128)(local)-8       	   33032	     36164 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkGenRandTestData/genRandTestData(256)(local)-8       	   16736	     71837 ns/op	    6192 B/op	     258 allocs/op
+BenchmarkGenRandTestData/genRandTestData(512)(local)-8       	    7992	    144121 ns/op	   12336 B/op	     514 allocs/op
+BenchmarkGenRandTestData/genRandTestData(1024)(local)-8      	    4173	    287716 ns/op	   24624 B/op	    1026 allocs/op
+BenchmarkGenRandTestData/genRandTestData(2048)(local)-8      	    2072	    594797 ns/op	   49468 B/op	    2050 allocs/op

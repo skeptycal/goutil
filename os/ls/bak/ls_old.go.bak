@@ -1,0 +1,96 @@
+// package main
+
+// type ansiColorCode byte
+
+// const (
+// 	AnsiCodeBlack ansi = iota + 30
+// 	AnsiCodeRed
+// 	AnsiCodeGreen
+// 	AnsiCodeYellow
+// 	AnsiCodeBlue
+
+// 	AnsiCodeReset ansiColorCode = 0
+// )
+
+// func (a ansiColorCode) Byte() byte {
+// 	return byte(a)
+// }
+
+// func (a ansiColorCode) String() string {
+// 	return fmt.Sprintf(ansiFMT, a)
+// }
+
+// type GNUFlags flag.FlagSet
+
+// {	flagAll           flag.Flag
+// 	flagAuthor        flag.Flag
+// 	flagEscape        flag.Flag
+// 	flagBlockSize     flag.Flag
+// 	flagIgnoreBackups flag.Flag
+// 	flagColumns       flag.Flag
+// 	flagColor         flag.Flag
+// 	flagDir           flag.Flag
+// 	flagClassify      flag.Flag
+// 	flagDirsFirst     flag.Flag
+// 	flagHuman         flag.Flag
+// 	flagSi            flag.Flag
+// 	flagFollow        flag.Flag
+// 	flagHyperlink     flag.Flag
+// 	flagInode         flag.Flag
+// 	flagIgnorePattern flag.Flag
+// 	flagLong          flag.Flag
+// 	flagIndicator     flag.Flag
+// 	flagReverse       flag.Flag
+// 	flagRecursive     flag.Flag
+// 	flagSortSize      flag.Flag
+// 	flagSortTime      flag.Flag
+// 	flagWidth         flag.Flag
+// 	flagSortExtension flag.Flag
+// 	flagContext       flag.Flag
+// 	flagOne           flag.Flag
+// 	flagHelp          flag.Flag
+// 	flagHelp2         flag.Flag
+// 	flagVersion       flag.Flag
+// 	flagVersion2      flag.Flag
+// }
+
+// var flagSet GNUFlags = flag.NewFlagSet("ls", flag.ContinueOnError)
+
+// func init() {
+// 	// flagSet.SetOutput(os.Stderr)
+
+// 	flagSet.Usage()
+// }
+
+// func samplePrintFlags() {
+// 	log.Info(flagAll)
+// 	log.Info(flagAuthor)
+// 	log.Info(flagEscape)
+// 	log.Info(flagBlockSize)
+// 	log.Info(flagIgnoreBackups)
+// 	log.Info(flagColumns)
+// 	log.Info(flagColor)
+// 	log.Info(flagDir)
+// 	log.Info(flagClassify)
+// 	log.Info(flagDirsFirst)
+// 	log.Info(flagHuman)
+// 	log.Info(flagSi)
+// 	log.Info(flagFollow)
+// 	log.Info(flagHyperlink)
+// 	log.Info(flagInode)
+// 	log.Info(flagIgnorePattern)
+// 	log.Info(flagLong)
+// 	log.Info(flagIndicator)
+// 	log.Info(flagReverse)
+// 	log.Info(flagRecursive)
+// 	log.Info(flagSortSize)
+// 	log.Info(flagSortTime)
+// 	log.Info(flagWidth)
+// 	log.Info(flagSortExtension)
+// 	log.Info(flagContext)
+// 	log.Info(flagOne)
+// 	log.Info(flagHelp)
+// 	log.Info(flagHelp2)
+// 	log.Info(flagVersion)
+// 	log.Info(flagVersion2)
+// }

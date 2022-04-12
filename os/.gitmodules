@@ -1,0 +1,30 @@
+[submodule "basicfile"]
+	path = basicfile
+	url = ./basicfile
+[submodule "gofile"]
+	path = gofile
+	url = ./gofile
+[submodule "gofile2"]
+	path = gofile2
+	url = ./gofile2
+[submodule "goshell"]
+	path = goshell
+	url = ./goshell
+[submodule "ls"]
+	path = ls
+	url = ./ls
+[submodule "memfile"]
+	path = memfile
+	url = ./memfile
+[submodule "osargsutils"]
+	path = osargsutils
+	url = ./osargsutils
+[submodule "path"]
+	path = path
+	url = ./path
+[submodule "redlogger"]
+	path = redlogger
+	url = ./redlogger
+[submodule "shpath"]
+	path = shpath
+	url = ./shpath
