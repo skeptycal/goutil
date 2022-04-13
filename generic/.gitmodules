@@ -1,6 +1,0 @@
-[submodule "sequence"]
-	path = sequence
-	url = ./generic/sequence
-[submodule "soexamples"]
-	path = soexamples
-	url = ./generic/soexamples
