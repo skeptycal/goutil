@@ -1,5 +1,15 @@
 
 mode: atomic
+github.com/skeptycal/errorlogger/example.go:9.16,13.2 3 0
+github.com/skeptycal/errorlogger/json_formatter.go:18.51,22.2 3 13
+github.com/skeptycal/errorlogger/json_formatter.go:24.47,26.2 1 1
+github.com/skeptycal/errorlogger/json_formatter.go:33.56,35.2 1 2
+github.com/skeptycal/errorlogger/json_formatter.go:38.57,40.2 1 2
+github.com/skeptycal/errorlogger/json_formatter.go:43.58,45.2 1 2
+github.com/skeptycal/errorlogger/json_formatter.go:49.48,51.2 1 1
+github.com/skeptycal/errorlogger/json_formatter.go:64.56,66.2 1 1
+github.com/skeptycal/errorlogger/json_formatter.go:72.101,74.2 1 1
+github.com/skeptycal/errorlogger/json_formatter.go:77.53,79.2 1 16
 github.com/skeptycal/errorlogger/test_info.go:30.116,31.19 1 61
 github.com/skeptycal/errorlogger/test_info.go:35.2,40.13 2 61
 github.com/skeptycal/errorlogger/test_info.go:47.2,49.17 2 61
@@ -53,13 +63,3 @@ github.com/skeptycal/errorlogger/errorlogger.go:431.2,431.23 1 12
 github.com/skeptycal/errorlogger/errorlogger.go:424.14,426.3 1 12
 github.com/skeptycal/errorlogger/errorlogger.go:432.17,434.13 2 12
 github.com/skeptycal/errorlogger/errorlogger.go:435.10,436.31 1 0
-github.com/skeptycal/errorlogger/example.go:9.16,13.2 3 0
-github.com/skeptycal/errorlogger/json_formatter.go:18.51,22.2 3 13
-github.com/skeptycal/errorlogger/json_formatter.go:24.47,26.2 1 1
-github.com/skeptycal/errorlogger/json_formatter.go:33.56,35.2 1 2
-github.com/skeptycal/errorlogger/json_formatter.go:38.57,40.2 1 2
-github.com/skeptycal/errorlogger/json_formatter.go:43.58,45.2 1 2
-github.com/skeptycal/errorlogger/json_formatter.go:49.48,51.2 1 1
-github.com/skeptycal/errorlogger/json_formatter.go:64.56,66.2 1 1
-github.com/skeptycal/errorlogger/json_formatter.go:72.101,74.2 1 1
-github.com/skeptycal/errorlogger/json_formatter.go:77.53,79.2 1 16

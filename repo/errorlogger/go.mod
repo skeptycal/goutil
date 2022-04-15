@@ -1,4 +1,4 @@
-module github.com/skeptycal/errorlogger
+module github.com/skeptycal/goutil/repo/errorlogger
 
 go 1.18
 
