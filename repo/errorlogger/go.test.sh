@@ -10,3 +10,7 @@ for d in $(go list ./... | grep -v vendor); do
         rm profile.out
     fi
 done
+
+for d in $(go list ./... | grep -v vendor); do
+    echo "$d"
+done

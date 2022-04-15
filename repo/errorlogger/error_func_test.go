@@ -23,6 +23,10 @@ var (
 	fakeOuter error
 )
 
+func loggerFromWriter(w io.Writer) ErrorLogger {
+	return NewWithOptions(true, "", nil, nil, nil)
+}
+
 func init() {
 	nillogger.Disable()
 	// nillogger.SetOutput(nil)
